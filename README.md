@@ -1,3 +1,15 @@
+Simple MicroServices Architecture for `humble` developers.
+
+## Stack
+* Spring Boot
+* Eureka Server
+* Eureka Client
+* Spring Cloud Gateway
+* Netflix Hystrix + Dashboard
+* OpenFeign
+
+
+
 ## Service URL
 * [swagger ui](http://domain/context/swagger-ui.html)
 * [hystrix dashboard](http://domain/context/hystrix)
