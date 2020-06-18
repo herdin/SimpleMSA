@@ -1,0 +1,34 @@
+EUREKA: localhost
+
+spring:
+  application:
+    name: simple-service-type-a
+server:
+  servlet:
+    context-path: /simple/msa/a
+  port: 8080
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://${EUREKA}:8761/eureka
+
+simple-service-type-a:
+  ribbon:
+    eureka:
+      enabled: true
+    ServerListRefreshInterval: 15000
+    MaxAutoRetries: 0
+
+feign:
+  hystrix:
+    enabled: true
+  httpclient:
+    connection-timeout: 30000
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

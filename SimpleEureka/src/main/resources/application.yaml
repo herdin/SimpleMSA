@@ -1,0 +1,17 @@
+EUREKA: localhost
+eureka:
+  server:
+    response-cache-update-interval-ms: 1000
+    enableSelfPreservation: false
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: "http://${EUREKA}:8761/eureka/"
+  instance:
+    prefer-ip-address: true
+    status-page-url: "http://${EUREKA}:8761/eureka/"
+server:
+  port: 8761
+#  servlet:
+#    context-path: /eureka

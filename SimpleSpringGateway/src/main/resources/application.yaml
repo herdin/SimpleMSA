@@ -1,0 +1,40 @@
+EUREKA: localhost
+
+server:
+  port: 8070
+  servlet:
+    context-path: /gateway
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${EUREKA}:8761/eureka
+  instance:
+    prefer-ip-address: true
+
+spring:
+  application:
+    name: simple-spring-gateway
+  cloud:
+    gateway:
+      # CORS 설정을 안해도 상관없는 것 같은데 잘 모르겠다.......
+#      default-filters:
+#        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
+#      globalcors:
+#        cors-configurations:
+#          '[/**]':
+#            allowed-origins: "*"
+#            allowed-methods: "*"
+#            allowed-headers: "*"
+#            allow-credentials: true
+      routes:
+        -
+          id: simple-service-type-a
+          uri: lb://SIMPLE-SERVICE-TYPE-A
+          predicates:
+            - Path=/simple/msa/a/**
+        -
+          id: simple-service-type-b
+          uri: lb://SIMPLE-SERVICE-TYPE-B
+          predicates:
+            - Path=/simple/msa/b/**
