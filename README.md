@@ -7,6 +7,7 @@ Simple MicroServices Architecture for `humble` developers.
 * Spring Cloud Gateway
 * Netflix Hystrix + Dashboard
 * OpenFeign
+* Spring Kafka
 
 
 
@@ -19,3 +20,4 @@ Simple MicroServices Architecture for `humble` developers.
 * [서킷 브레이커 with Hystrix, Feign](https://brunch.co.kr/@springboot/262)
 * [우아한 feign 적용기](https://woowabros.github.io/experience/2019/05/29/feign.html)
 * [Netflix Hystrix](https://multifrontgarden.tistory.com/238)
+* [Spring for Apache Kafka](https://docs.spring.io/spring-kafka/reference/html)
