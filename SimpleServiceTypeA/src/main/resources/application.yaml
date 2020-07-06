@@ -27,8 +27,18 @@ feign:
     enabled: true
   httpclient:
     connection-timeout: 30000
+
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+
+kafka:
+  url: KAFKA-IP:KAFKA-PORT
+
+logging:
+  level:
+    root: INFO
+    com:
+      harm: DEBUG

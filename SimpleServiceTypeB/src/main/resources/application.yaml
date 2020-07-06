@@ -6,7 +6,7 @@ spring:
 server:
   servlet:
     context-path: /simple/msa/b
-  port: 8081
+  port: 8090
 
 eureka:
   instance:
@@ -27,3 +27,8 @@ feign:
     enabled: true
   httpclient:
     connection-timeout: 30000
+
+logging:
+  level:
+    com:
+      harm: debug
